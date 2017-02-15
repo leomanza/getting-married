@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,600" rel="stylesheet">
+    <style>
+      .pace {
+        pointer-events: none;
+        user-select: none;
+        box-sizing: border-box;
+
+        z-index: 2000;
+        position: fixed;
+        margin: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+
+        background: #EA526F;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transition: opacity 2s;
+        transition-timing-function: ease-in;
+      }
+
+      .pace .pace-activity {
+        box-sizing: border-box;
+
+        display: block;
+        width: 70vmin;
+        height: 70vmin;
+
+        background: white;
+
+        -webkit-clip-path: url(#heart);
+        clip-path: url(#heart);
+      }
+
+      .pace.pace-inactive {
+        opacity: 0;
+      }
+
+      .pace.pace-inactive .pace-activity {
+        animation-duration: 2s;
+        animation-name: logo;
+        animation-timing-function: ease-out;
+      }
+
+      @keyframes logo {
+        from {
+          transform: scale(1, 1);
+        }
+        25% {
+          transform: scale(0.4, 0.4);
+        }
+        to {
+          transform: scale(10, 10);
+        }
+      }
+    </style>
+    <script src="%PUBLIC_URL%/pace.min.js"></script>
+    <!--
+      Notice the use of %PUBLIC_URL% in the tag above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Yayi y Nacho</title>
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute;">
+      <defs>
+        <clipPath id="heart" clipPathUnits="objectBoundingBox">
+          <path d="M 0.852,0.03087557603686636 C 0.7271232400000001,-0.03416239170506912 0.55985244,0.026995533179723502 0.5,0.17188940092165897 0.440201,0.01621927050691244 0.254179748,-0.04939525806451613 0.129193796,0.04213376221198157 0.039158453600000004,0.09697066359447004 -0.0128741216,0.2182712995391705 0.00149909668,0.3340377465437788 0.018622298000000002,0.5055626267281106 0.12597922,0.6393001843317972 0.23393136,0.7480846543778802 0.320180536,0.8352384792626728 0.4107556,0.9164393087557604 0.49960000000000004,1 c 0.13099871999999999,-0.12290124423963134 0.27211208,-0.2348464055299539 0.3830534,-0.3831333640552995 0.07548284,-0.107863732718894 0.1379252,-0.24902578341013826 0.10894888,-0.39087566359447007 C 0.97461376,0.14062494930875577 0.9200676799999999,0.06645909216589863 0.852,0.03087557603686636 Z"></path>
+        </clipPath>
+      </defs>
+    </svg>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start`.
+      To create a production bundle, use `npm run build`.
+    -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
+  </body>
+</html>
