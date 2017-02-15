@@ -12,6 +12,7 @@ import DressCodeIcon from './BowTies.svg'
 import GiftIcon from './Gift.svg'
 import PhotoIcon from './Polaroids.svg'
 import PlayIcon from './Play.svg'
+import CloseIcon from './Close.svg'
 /* Slideshow */
 import Slide1 from './Costanera.jpg'
 import Slide2 from './Cataratas.jpg'
@@ -89,6 +90,8 @@ class Hover extends Component {
     return (<div
               onMouseEnter={this.startHover}
               onMouseLeave={this.endHover}
+              onBlur={this.endHover}
+              onClick={this.endHover}
               onTouchStart={this.startHover}
               onTouchEnd={this.endHover}
               onTouchCancel={this.endHover}>
@@ -196,6 +199,19 @@ class App extends Component {
           <h3 style={h3}>Pero si querés hacernos un regalito podés ayudarnos con nuestra Luna de Miel.<br/>Podes hacer un depósito o transferencia a nuestra cuenta.</h3>
         </Section>
         <Section>
+          <span style={{
+            position: 'absolute',
+            top: '1em',
+            right: '1em',
+            width: '2em',
+            height: '2em',
+            opacity: this.state.showSlide ? 1 : 0,
+            zIndex: this.state.showSlide ? 3 : -1
+          }} onClick={this.hideSlide}>
+            <Hover style={{ fill: '#EA526F' }}>
+              <SVG style={{ width: '100%', height: '100%' }} path={CloseIcon}/>
+            </Hover>
+          </span>
           <div style={{ height: '100vh', width: '100vw', position: 'absolute', top: 0, left: 0, overflowY: 'scroll', opacity: this.state.showSlide ? 1 : 0, zIndex: this.state.showSlide ? 2 : -1 }}>
             <Carousel slides={[
               Slide1,
