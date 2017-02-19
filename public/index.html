@@ -7,7 +7,7 @@
     <!--link rel="manifest" href="%PUBLIC_URL%/manifest.json"-->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,600" rel="stylesheet">
     <style>
-      .pace {
+      .loading {
         pointer-events: none;
         user-select: none;
         box-sizing: border-box;
@@ -33,7 +33,7 @@
         transition-timing-function: ease-in;
       }
 
-      .pace .pace-activity {
+      .loading .loading-activity {
         box-sizing: border-box;
 
         display: block;
@@ -46,11 +46,11 @@
         clip-path: url(#heart);
       }
 
-      .pace.pace-inactive {
+      .loading.loading-inactive {
         opacity: 0;
       }
 
-      .pace.pace-inactive .pace-activity {
+      .loading.loading-inactive .loading-activity {
         animation-duration: 2s;
         animation-name: logo;
         animation-timing-function: ease-out;
@@ -67,7 +67,7 @@
           transform: scale(10, 10);
         }
       }
-      
+
       body, html {
         overflow: hidden;
       }
@@ -78,7 +78,6 @@
         font-family: 'Raleway', sans-serif;
       }
     </style>
-    <script src="%PUBLIC_URL%/pace.min.js"></script>
     <!--
       Notice the use of %PUBLIC_URL% in the tag above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -91,6 +90,9 @@
     <title>Yayi y Nacho</title>
   </head>
   <body>
+    <div class="loading">
+      <div class="loading-activity"></div>
+    </div>
     <svg width="0" height="0" style="position: absolute;">
       <defs>
         <clipPath id="heart" clipPathUnits="objectBoundingBox">
