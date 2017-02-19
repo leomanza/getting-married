@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Dimensions from '../Dimensions'
+import Dimensions from './Dimensions'
 
 export default class FitText extends Component {
   constructor(props) {
