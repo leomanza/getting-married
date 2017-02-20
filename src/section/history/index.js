@@ -63,7 +63,7 @@ class Carousel extends Component {
   }
 }
 
-const History = ({onShowSlide, showSlide, onHideSlide}) => (
+export const History = ({onShowSlide, showSlide, onHideSlide}) => (
   <Section>
     <span style={{
       position: 'absolute',
@@ -73,7 +73,7 @@ const History = ({onShowSlide, showSlide, onHideSlide}) => (
       height: '2em',
       opacity: showSlide ? 1 : 0,
       zIndex: showSlide ? 3 : -1
-    }} onClick={onHideSlide}>
+    }} onClick={onHideSlide} onTouchEnd={onHideSlide}>
       <Hover style={{ fill: '#EA526F' }}>
         <SVG style={{ width: '100%', height: '100%' }} path={CloseIcon}/>
       </Hover>
@@ -96,7 +96,7 @@ const History = ({onShowSlide, showSlide, onHideSlide}) => (
       ]}/>
     </div>
     <Title icon={PhotoIcon}>Nuestra historia</Title>
-    <h2 style={h2} onClick={onShowSlide}>
+    <h2 style={h2} onClick={onShowSlide} onTouchEnd={onShowSlide}>
       <Hover style={{
         fill: '#EA526F'
       }}>
@@ -108,5 +108,3 @@ const History = ({onShowSlide, showSlide, onHideSlide}) => (
     </h2>
   </Section>
 )
-
-export default History

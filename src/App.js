@@ -1,10 +1,5 @@
 import React, { Component } from 'react'
-import Welcome from './section/welcome'
-import Ceremony from './section/ceremony'
-import Party from './section/party'
-import DressCode from './section/dress-code'
-import Gift from './section/gift'
-import History from './section/history'
+import { Welcome, Ceremony, Party, DressCode, Gift, History } from './section'
 
 class App extends Component {
   constructor(props) {

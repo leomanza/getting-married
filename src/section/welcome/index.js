@@ -7,7 +7,7 @@ import { h2, h3 } from '../Styles'
 import FrontCover from '../../media/BouquetHug.jpg'
 import WeddingIcon from '../../icons/Rings.svg'
 
-const Welcome = () => (
+export const Welcome = () => (
   <Section image={FrontCover} style={{
       background:'rgba(234, 82, 111, 0.77)',
       color: 'white'
@@ -21,5 +21,3 @@ const Welcome = () => (
     }}><Countdown target="2017-11-04"/></h3></FitText>
   </Section>
 )
-
-export default Welcome

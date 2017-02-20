@@ -5,7 +5,7 @@ import { h2, h3 } from '../Styles'
 import GiftCover from '../../media/Beach.jpg'
 import GiftIcon from '../../icons/Gift.svg'
 
-const Gift = () => (
+export const Gift = () => (
   <Section image={GiftCover} style={{
       background:'rgba(37, 206, 209, 0.77)',
       color: 'white'
@@ -15,5 +15,3 @@ const Gift = () => (
     <h3 style={h3}>Pero si querés hacernos un regalito podés ayudarnos con nuestra Luna de Miel.<br/>Podes hacer un depósito o transferencia a nuestra cuenta.</h3>
   </Section>
 )
-
-export default Gift
