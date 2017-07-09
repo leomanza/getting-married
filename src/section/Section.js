@@ -15,9 +15,18 @@ class Section extends React.Component {
       <div style={{
           position: 'relative',
           height: '100vh',
-          overflow: 'hidden',
-          transformStyle: 'preserve-3d'
+          overflow: 'hidden'
         }}>
+        {image ? (
+          <div style={{
+            backgroundImage: `url(${image})`,
+            backgroundPosition: 'center center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            zIndex: 3,
+            ...layer
+          }}></div>
+        ) : null}
         <div style={{
           zIndex: 4,
           display: 'flex',
@@ -29,17 +38,6 @@ class Section extends React.Component {
         }}>
           {children}
         </div>
-        {image ? (
-          <div style={{
-            backgroundImage: `url(${image})`,
-            backgroundPosition: 'center center',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            zIndex: 3,
-            transform: 'translateZ(-300px) scale(2)',
-            ...layer
-          }}></div>
-        ) : null}
       </div>
     )
   }

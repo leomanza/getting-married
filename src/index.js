@@ -1,9 +1,12 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-snapshot'
 import App from './App'
+import registerServiceWorker from './registerServiceWorker'
 
-ReactDOM.render(
+render(
   <App />,
-  document.getElementById('root'),
-  _ => document.querySelector('.loading').className = 'loading loading-inactive'
+  document.getElementById('root')
 )
+
+registerServiceWorker()
+document.querySelector('.loading').className = 'loading loading-inactive'
