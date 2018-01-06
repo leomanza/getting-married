@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Welcome, Ceremony, Party, DressCode, Gift, History } from './section'
+import { Welcome, Civil, Ceremony, Party, HoneyMoon, Alojamiento, History, RSVP } from './section'
 
 class App extends Component {
   render() {
@@ -12,11 +12,12 @@ class App extends Component {
           perspective: '300px'
         }}>
         <Welcome/>
+        <Civil/>
         <Ceremony/>
         <Party/>
-        <DressCode/>
-        <Gift/>
-        <History/>
+        <HoneyMoon/>
+        <Alojamiento/>
+        {/* <RSVP/> */}
       </div>
     )
   }

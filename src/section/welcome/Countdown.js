@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import moment from 'moment'
+import momentDurationFormat from 'moment-duration-format'
 import es from 'moment/locale/es'
 
 moment.updateLocale('es', es)
@@ -25,9 +26,9 @@ class Countdown extends Component {
   render() {
     const target = moment(this.props.target)
     const diff = target.diff(this.state.now)
-    const duration = moment.duration(diff)
+    const duration = moment.duration(diff).format("d [días] h [hs] m [min] s [seg]")
     if(diff < 0) return <span>¡Ya nos casamos!</span>
-    return <span>Faltan {duration.humanize()}</span>
+    return <span>Faltan {duration}</span>
   }
 }
 
